@@ -1,0 +1,26 @@
+{
+  "name": "regelette",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A local-network party game with a TV display, GM dashboard, and persistent game state.",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "check": "npm run check --workspaces --if-present",
+    "dev": "concurrently -n server,tv,gm -c green,blue,magenta \"npm run dev --workspace @regelette/server\" \"npm run dev --workspace @regelette/tv-client\" \"npm run dev --workspace @regelette/gm-dashboard\"",
+    "dev:server": "npm run dev --workspace @regelette/server",
+    "dev:tv": "npm run dev --workspace @regelette/tv-client",
+    "dev:gm": "npm run dev --workspace @regelette/gm-dashboard"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "concurrently": "^9.0.1",
+    "typescript": "^5.6.3"
+  },
+  "engines": {
+    "node": ">=20.17.0"
+  }
+}

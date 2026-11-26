@@ -1,0 +1,133 @@
+:root {
+  color: #f7f3e8;
+  background:
+    radial-gradient(circle at top, rgba(255, 202, 116, 0.35), transparent 32%),
+    linear-gradient(180deg, #0d1b2a, #241623 60%, #4a1c1c);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.screen {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1.2fr 1fr;
+  min-height: 100vh;
+  padding: 32px;
+}
+
+.panel {
+  background: rgba(10, 12, 18, 0.55);
+  border: 1px solid rgba(255, 244, 214, 0.2);
+  border-radius: 24px;
+  padding: 24px;
+  backdrop-filter: blur(12px);
+}
+
+.panel--hero {
+  grid-column: 1 / -1;
+}
+
+.eyebrow,
+.status {
+  color: #ffd98b;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.meta {
+  margin: 0.5rem 0;
+  font-size: 1.05rem;
+}
+
+.prompt-tag {
+  color: #ffd98b;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.prompt-title {
+  font-size: clamp(1.8rem, 2vw, 2.8rem);
+  margin: 0.5rem 0;
+}
+
+.prompt-copy,
+.prompt-answer {
+  font-size: 1.15rem;
+  line-height: 1.5;
+}
+
+.player-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.player-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 244, 214, 0.16);
+  border-radius: 16px;
+  padding: 14px;
+}
+
+.player-card--active {
+  border-color: rgba(255, 217, 139, 0.8);
+  box-shadow: 0 0 0 2px rgba(255, 217, 139, 0.3);
+}
+
+.player-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+.rule-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  min-height: 36px;
+}
+
+.rule-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255, 217, 139, 0.12);
+  border: 1px solid rgba(255, 217, 139, 0.3);
+  font-size: 0.8rem;
+}
+
+.rule-pill--gamewide {
+  background: rgba(121, 168, 255, 0.12);
+  border-color: rgba(121, 168, 255, 0.35);
+}
+
+.rule-empty {
+  color: rgba(255, 244, 214, 0.75);
+  font-style: italic;
+}
+
+.empty-state {
+  color: rgba(255, 244, 214, 0.8);
+}
+
+@media (max-width: 900px) {
+  .screen {
+    grid-template-columns: 1fr;
+  }
+}
